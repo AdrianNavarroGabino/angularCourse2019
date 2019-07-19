@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1>MENÚ</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="frames1.html">Etiquetas</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="frames2.html">Imágenes</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="frames3.html">Tablas</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="frames4.html">Listas</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="frames5.html">Formulario</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="frames6.html">Queen</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2>Formulario</h2>
+
+                <form method="GET">
+                    <label for="tipo_vivienda">Tipo de vivienda: </label>
+            
+                    <select name="tipo_vivienda">
+                        <option value=""></option>
+                        <option value="Piso" selected>Piso</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Local">Local</option>
+                    </select><br>
+            
+                    <label for="zona">Zona: </label>
+                    <select name="zona">
+                        <option value=""></option>
+                        <option value="Nervion" selected>Nervión</option>
+                        <option value="Alameda">Alameda</option>
+                        <option value="Macarena">Macarena</option>
+                    </select><br>
+            
+                    <label for="direccion">Dirección: </label>
+                    <input type="text" name="direccion"><br>
+            
+                    <label for="num_dormitorios">Número de dormitorios: </label>
+                    <input type="radio" name="num_dormitorios" value="1">1 
+                    <input type="radio" name="num_dormitorios" value="2">2 
+                    <input type="radio" name="num_dormitorios" value="3">3 
+                    <input type="radio" name="num_dormitorios" value="4" checked>4 
+                    <input type="radio" name="num_dormitorios" value="5">5<br>
+            
+                    <label for="precio">Precio: </label>
+                    <input type="text" name="precio"> €<br>
+            
+                    <label for="tamanyo">Tamaño: </label>
+                    <input type="text" name="tamanyo" value="125"> metros cuadrados<br>
+            
+                    <label for="extras">Extras (marque los que procedan): </label>
+                    <input type="checkbox" name="extras" value="Piscina">Piscina 
+                    <input type="checkbox" name="extras" value="Jardín">Jardín
+                    <input type="checkbox" name="extras" value="Garaje">Garaje<br>
+            
+                    <label for="foto">Foto: </label>
+                    <input type="file" name="foto"><br>
+            
+                    <label for="observaciones">Observaciones: </label>
+                    <textarea name="observaciones" cols="40" rows="8"></textarea><br><br>
+            
+                    <input type="submit" value="Insertar vivienda">
+                </form>
+            </td>
+
+            <td>
+                <img src="img/1.png" alt="Imagen 1"><br/><img src="img/2.jpg" alt="Imagen 2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>ADRIÁN NAVARRO GABINO</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
