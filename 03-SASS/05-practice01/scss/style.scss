@@ -1,0 +1,51 @@
+$verde: #393;
+$azul: #339;
+$tamanyo1: 1.6rem;
+$padding1: 5px;
+$tamanyo2: 1.4rem;
+$padding2: 4px;
+$tamanyo-padding: 20px;
+
+#primero {
+    .destacado {
+        color: $verde;
+
+        font: {
+            size: $tamanyo1;
+        }
+
+        text: {
+            align: center;
+        }
+
+        padding: $padding1;
+    }
+}
+
+#segundo {
+    .destacado {
+        color: $azul;
+
+        font: {
+            size: $tamanyo2;
+        }
+
+        text: {
+            decoration: underline;
+        }
+
+        padding: $padding2;
+    }
+}
+
+:not(.destacado) {
+    p::first-line {
+        font: {
+            style: italic;
+        }
+    }
+}
+
+div {
+    padding: $tamanyo-padding;
+}
