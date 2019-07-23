@@ -1,0 +1,13 @@
+.fondo-rojo {
+  background-color: red; }
+
+/*@import "estilo1.scss";*/
+body {
+  background-color: #c53333;
+  color: #441f80; }
+
+.fondo-blanco {
+  background-color: #441f80;
+  color: #c53333; }
+
+/*# sourceMappingURL=style.css.map */
