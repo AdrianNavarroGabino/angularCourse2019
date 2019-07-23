@@ -1,0 +1,12 @@
+$blanco: #fff;
+$negro: #000;
+
+body {
+    background-color: $negro;
+    color: $blanco;
+}
+
+.fondo-blanco {
+    background-color: $blanco;
+    color: $negro;
+}
