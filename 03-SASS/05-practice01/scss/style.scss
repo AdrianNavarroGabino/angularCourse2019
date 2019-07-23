@@ -38,11 +38,9 @@ $tamanyo-padding: 20px;
     }
 }
 
-:not(.destacado) {
-    p::first-line {
-        font: {
-            style: italic;
-        }
+p:not(.destacado)::first-line {
+    font: {
+        style: italic;
     }
 }
 

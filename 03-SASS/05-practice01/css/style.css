@@ -10,7 +10,7 @@
   text-decoration: underline;
   padding: 4px; }
 
-:not(.destacado) p::first-line {
+p:not(.destacado)::first-line {
   font-style: italic; }
 
 div {
