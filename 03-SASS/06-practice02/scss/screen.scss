@@ -1,0 +1,50 @@
+@import "aux";
+@import "menu";
+
+footer {
+    @include ponerColor;
+    @include box-sizing(border-box);
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px;
+}
+
+ul.submenu {
+    @include ponerTransicion(height, 0.5s, ease-out);
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+}
+
+li.categoria {
+    float: left;
+
+    &>a {
+        @include ponerTransicion(padding, 0.4s, ease-out);
+    }
+
+    &:hover {
+        &>a {
+            padding: 10px 20px;
+        }
+
+        ul.submenu {
+            height: 100px;
+        }
+    }
+}
+
+header {
+    padding: 12px 30px;
+    font: {
+        size: 1.8em;
+        weight: bold;
+        family: Georgia, 'Times New Roman', Times, serif;
+    }
+    color: #444;
+    background-color: #eee;
+    text: {
+        shadow: 1px 1px 2px #aaa;
+    }
+}
