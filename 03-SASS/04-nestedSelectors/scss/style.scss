@@ -1,0 +1,16 @@
+@import "buttons";
+/*@import "colores1.scss";*/
+@import "colores2.scss";
+
+body {
+    background-color: $color2;
+    color: $color1;
+}
+
+.fondo-blanco {
+    background-color: $color1;
+    color: $color2;
+    strong {
+        color: yellow;
+    }
+}
