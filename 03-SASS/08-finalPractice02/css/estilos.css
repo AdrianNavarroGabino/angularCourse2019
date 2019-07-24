@@ -1,0 +1,94 @@
+* {
+  padding: 0px;
+  margin: 0px; }
+
+body {
+  padding-top: 20px;
+  text-align: center;
+  background-image: url(../imgs/old_map.png); }
+  body #page {
+    width: 960px;
+    margin: 0px auto 0px auto;
+    text-align: left; }
+    body #page #header {
+      background-color: #313B44;
+      color: white;
+      font-family: "'Courier New', Courier, monospace";
+      font-size: 1.1em;
+      border-bottom: 6px;
+      background-image: url("../imgs/logo.png");
+      background-repeat: no-repeat;
+      background-position: 25px  center; }
+      body #page #header h1 {
+        padding: 20px 100px 20px 100px; }
+    body #page nav {
+      background-image: url("../imgs/red015.jpg");
+      background-repeat: repeat;
+      color: silver;
+      font-family: "'Courier New', Courier, monospace";
+      font-size: 1.4em;
+      text-align: center; }
+      body #page nav li {
+        display: inline-block;
+        list-style: none;
+        padding-top: 80px;
+        margin: 0px 100px 20px 100px;
+        cursor: default;
+        text-align: center; }
+      body #page nav #contenidos {
+        background-image: url("../imgs/book.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-position-y: 10px; }
+      body #page nav #videos {
+        background-image: url("../imgs/film.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-position-y: 10px; }
+      body #page nav #contacto {
+        background-image: url("../imgs/mail.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-position-y: 10px; }
+      body #page nav a {
+        text-decoration: none;
+        color: orange;
+        text-align: center; }
+        body #page nav a:hover {
+          color: white; }
+    body #page .clearfix:before,
+    body #page .clearfix:after,
+    body #page #content {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 0.8em;
+      background-image: url(../imgs/lgrey008.jpg);
+      width: 100%;
+      display: table; }
+    body #page #fila {
+      display: table-row; }
+    body #page .article {
+      display: table-cell;
+      width: 240px;
+      border: 1px lightgray solid;
+      background-color: white;
+      line-height: 1.8em;
+      padding: 5px 5px 22px 5px;
+      margin: 30px;
+      text-align: center; }
+      body #page .article .article_header {
+        border-bottom: 1px solid #999; }
+    body #page h2 {
+      padding: 10px;
+      font-size: 1.2em; }
+    body #page footer {
+      color: white;
+      font-size: 0.7em;
+      text-align: center;
+      background-color: #313B44;
+      border-top: 6px solid black;
+      padding-top: 15px;
+      padding-bottom: 15px; }
+      body #page footer a {
+        color: white; }
+
+/*# sourceMappingURL=estilos.css.map */

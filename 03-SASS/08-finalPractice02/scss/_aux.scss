@@ -1,0 +1,19 @@
+$fondo-footer-header: #313B44;
+$borde-article: #999;
+
+@mixin imagen_fondo ($url, $repeat) {
+    background-image: url($url);
+    background-repeat: $repeat;
+}
+
+@mixin fuente ($fuente, $tamanyo, $color) {
+    color: $color;
+    font-family: $fuente;
+    font-size: $tamanyo;
+}
+
+@mixin li_imagen ($url) {
+    @include imagen_fondo($url, no-repeat);
+    background-position: center top;
+    background-position-y: 10px;
+}
