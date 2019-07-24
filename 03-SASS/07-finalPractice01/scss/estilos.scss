@@ -1,0 +1,112 @@
+@import "aux";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    padding-top: 20px;
+    text-align: center;
+    background-image: url(../imgs/old_map.png);
+
+    #page {
+        width: 960px;
+        margin: 0px auto 0px auto;
+        text-align: left;
+
+        #header {
+            background-color: $fondo-footer-header;
+            @include fuente("'Courier New', Courier, monospace", 1.1em, white);
+            border-bottom: 6px;
+            @include imagen_fondo("../imgs/logo.png", no-repeat);
+            background-position:  25px  center;
+
+            h1 {
+                padding: 20px 100px 20px 100px;
+            }
+        }
+
+        nav {
+            @include imagen_fondo("../imgs/red015.jpg", repeat);
+            @include fuente("'Courier New', Courier, monospace", 1.4em, silver);
+            text-align: center;
+
+            li {
+                display: inline-block;
+                list-style: none;
+                padding-top: 80px;
+                margin: 0px 100px 20px 100px;
+                cursor: default;
+                text-align: center;
+            }
+
+            #contenidos {
+                @include li_imagen("../imgs/book.png");
+            }
+
+            #videos {
+                @include li_imagen("../imgs/film.png");
+            }
+
+            #contacto {
+                @include li_imagen("../imgs/mail.png");
+            }
+
+            a {
+                text-decoration: none;
+                color: orange;
+                text-align: center;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .clearfix:before,
+        .clearfix:after,
+        #content {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.8em;
+            background-image: url(../imgs/lgrey008.jpg);
+            width: 100%;
+            display: table;
+        }
+
+        .article {
+            float: left;
+            width: 240px;
+            border: 1px lightgray solid;
+            background-color: white;
+            line-height: 1.8em;
+            padding: 5px 5px 22px 5px;
+            margin: 30px;
+            text-align: center;
+
+            .article_header {
+                border-bottom: 1px solid $borde-article;
+            }
+        }
+
+        h2 {
+            padding: 10px;
+            font-size: 1.2em;
+        }
+
+        footer {
+            color: white;
+            font-size: 0.7em;
+            text-align: center;
+            background-color: $fondo-footer-header;
+            border-top: 6px solid black;
+            padding-top: 15px;
+            padding-bottom: 15px;
+
+            a {
+                color: white;
+                clear: both;
+            }
+        }
+    }
+}
