@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+  <head>
+    <meta charset="utf-8">
+    <title>Grupo de música - Queen</title>
+	<link rel="stylesheet" href="tabla.css">
+  </head>
+  <body>
+	<div id="contenedor">
+		<header class="cabecera">
+			<h1>Queen</h1>
+			<p>Banda británica de rock formada en 1970 en Londres.</p>
+			<img src="queen.jpg" width="400" height="200" alt="Fotografía de los componentes del grupo Queen.">
+		</header>
+		<nav>
+			<ul>
+				<li><a href="queen.html">Posicionamiento float</a></li>
+				<li><a href="queen.html">Posicionamiento absoluto</a></li>
+				<li><a href="queen.html">Posicionamiento tablas CSS</a></li>
+				<!--
+					Los enlaces son falsos para no poner más archivos html
+				-->
+			</ul>
+		</nav>
+		<div id="tabla">
+			<div id="fila1">
+				<section id="principal">
+					<h2>Integrantes del grupo</h2>
+					<ul>
+					  <li>Brian May</li>
+					  <li>Freddie Mercury</li>
+					  <li>John Deacon</li>
+					  <li>Roger Taylor</li>
+					</ul>
+					<h2>Discografía</h2>
+					<table>
+						<caption>Grandes éxitos de Queen</caption>
+						<tr>
+							<th>Año</th>
+							<th>Disco</th>
+						</tr>
+						<tr>
+							<td>1975</td>
+							<td>A Night at the Opera</td>
+						</tr>
+						<tr>
+							<td>1986</td>
+							<td>A Kind of Magic</td>
+						</tr>
+						<tr>
+							<td>1989</td>
+							<td>The Miracle</td>
+						</tr>
+						<tr>
+							<td colspan="2" id="infoDisco"><q>A Kind of Magic</q> fue el álbum más exitoso.</td>
+						</tr>
+					</table>
+				</section>
+
+				<section id="blog">
+					<h2>BLOG</h2>
+					<article id="concierto-tributo">
+						<header class="cabArticulo">
+							<h3>Concierto tributo</h3>
+							<time datetime="2014-02-18">18 de febrero de 2014</time>
+						</header>
+						<p>
+							El concierto tributo a Freddie Mercury se realizó el 20 de abril de 1992,
+							en el estadio de Wembley, Londres. Entre los artistas invitados estuvieron
+							Annie Lennox, David Bowie, Def Leppard, Elizabeth Taylor, Elton John, Extreme,
+							George Michael, Guns N' Roses, Ian Hunter, Lisa Stansfield, Liza Minnelli, Metallica,
+							Mick Ronson, Robert Plant, Roger Daltrey, Spinal Tap, Tony Iommi y Zucchero.
+						</p>
+						<video controls preload="none" width="256" height="144">
+							<source src="queen.mp4" type="video/mp4">
+							<p>Your browser does not support the video tag.</p>
+						</video>
+					</article>
+
+					<article id="adam-lambert">
+						<header class="cabArticulo">
+							<h3>Queen + Adam Lambert</h3>
+							<time datetime="2013-11-05">5 de noviembre de 2013</time>
+						</header>
+						<p>
+							Desde 2011, Brian May y Roger Taylor realizan conciertos junto con el cantante
+							estadounidense Adam Lambert bajo el nombre Queen + Adam Lambert. El 18 de septiembre
+							de 2015 se presentaron en la 6ª edición del festival Rock in Rio ante 82.000 personas.
+							Durante esta gira recorrieron Estados Unidos, Europa, Asia y Sudamérica. 
+						</p>
+					</article>
+
+					<article id="influencia">
+						<header class="cabArticulo">
+							<h3>Influencia</h3>
+							<time datetime="2013-05-20">20 de mayo de 2013</time>
+						</header>
+						<p>
+							Queen ha sido reconocido por haber hecho contribuciones significativas a géneros
+							como el hard rock161​ y el heavy metal,162​ entre otros. Por lo tanto, la banda ha sido
+							citada como influencia por muchos otros músicos. Además, al igual que su música, los
+							grupos y artistas que han afirmado estar influenciados por Queen son diversos y abarcan
+							diferentes generaciones, países y géneros.
+						</p>
+					</article>
+				</section>
+
+				<aside>
+					<h2>Historia del Grupo</h2>	
+					<p class="primero"> Queen es una <em>banda británica</em> de rock formada en 1970 
+					en Londres por el <em>cantante</em> <strong>Freddie Mercury</strong>, 
+					el <em>guitarrista</em> Brian May, el <em>baterista</em> Roger Taylor y 
+					el <em>bajista</em> John Deacon.</p> 
+					<p>Si bien el grupo ha presentado bajas de dos de sus miembros 
+					(Mercury, fallecido en 1991, y Deacon, retirado en 1997), 
+					los integrantes restantes, <strong>May y Taylor</strong>, continúan trabajando 
+					bajo el nombre <em>Queen</em>, por lo que la banda aún se considera activa.
+					</p>
+				</aside>
+			</div>
+		</div>
+		<footer>
+			<h2>Sitio web oficial</h2>
+			<a href="http://www.queenonline.com/" target="_blank">www.queenonline.com</a>
+			<hr>
+		</footer>
+	</div>
+  </body>
+</html>

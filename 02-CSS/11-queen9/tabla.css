@@ -1,0 +1,70 @@
+* { margin: 0px; padding: 0px; } 
+
+
+h1 { font: bold 2em verdana, sans-serif; } 
+h2 { font: bold 1.5em verdana, sans-serif; }
+h3 { font: bold 1em verdana, sans-serif; }
+
+body { text-align: center; }
+#tabla {border-spacing: 20px;display: table; border:1px solid black;}
+#fila1 {display: table-row; border:1px solid black;}
+nav { background: #CCCCCC; padding: 5px 15px; height: 30px; padding: 300px 0px 20px 0px;} 
+
+nav li { 
+	display: inline; 
+	list-style: none; 
+	padding: 5px; 
+	font: bold 14px verdana, sans-serif; 
+	cursor:default;} 
+ nav a { text-decoration:none; } 
+ nav a:hover { color: white; } 
+#contenedor { width: 960px; margin: 15px auto;}
+.cabecera {position:fixed; top: 15px; width: 918px; left: 280px; background: #FFFBB9; border: 1px solid #999999; padding: 20px; height: 250px;} 
+#principal  {
+	padding: 20px;
+	vertical-align: top; 
+	border:1px solid black;
+	display: table-cell;
+	width: 40%; 
+	text-align: left;
+} 
+#principal ul {padding-left: 30px;}
+
+aside {padding: 20px;border:1px solid black;display: table-cell; width: 20%; background: #CCCCCC; text-align: left; line-height: 1.5em;}  
+
+footer { text-align: center; padding: 20px; border-top: 2px solid #999999; }
+.primero{
+	border:1px dashed white;
+	background-color:#a7cece;
+	padding:5px;
+	margin:10px;	
+	line-height:1.9em;
+	font-style: italic;
+	color: #444444;
+	font-family: Georgia, "Times NewRoman", Times, sarif;
+	text-indent:2em;
+	background-image: url(background.gif);
+	background-repeat: no-repeat; 
+	background-position: top left;
+	padding-left: 20px;
+	border-radius: 15px;
+}
+
+#blog {
+	padding: 20px;
+	border: 1px solid black;
+	display: table-cell;
+	width: 40%
+}
+
+article {
+	padding: 10px 0px;
+}
+
+time {
+	text-decoration: underline;
+}
+
+.cabArticulo {
+	background-color: #999;
+}
