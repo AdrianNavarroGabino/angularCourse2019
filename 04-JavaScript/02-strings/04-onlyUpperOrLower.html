@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        function upperSentece(sentence) {
+            if(sentence == sentence.toUpperCase())
+                return true;
+            return false;
+        }
+
+        function lowerSentence(sentence) {
+            if(sentence == sentence.toLowerCase())
+                return true;
+            return false;
+        }
+
+        let sentence = prompt("Introduce una frase:");
+
+        document.write("<p>");
+
+        if(sentence != "") {
+            if(upperSentece(sentence)) {
+                document.write("Está toda la frase en mayúsculas");
+            }
+            else if(lowerSentence(sentence)) {
+                document.write("Está toda la frase en minúsculas");
+            }
+            else {
+                document.write("La frase está mezclada");
+            }
+        }
+        else {
+            document.write("La frase está vacía");
+        }
+
+        document.write("</p>");
+    </script>
+</body>
+</html>
