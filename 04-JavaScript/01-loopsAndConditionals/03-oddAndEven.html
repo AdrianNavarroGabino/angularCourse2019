@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bucles</title>
+</head>
+<body>
+    <h1>Bucles</h1>
+
+    <script>
+        let number1 = +prompt("Introduce el primer número:");
+        let number2 = +prompt("Introduce el segundo numero:");
+
+        let greatest = number1 > number2 ? number1 : number2;
+        let lowest = number1 < number2 ? number1 : number2;
+
+        let sum = 0;
+        let odd = 0;
+        let even = 0;
+
+        document.write("<p>Números entre " + lowest + " y " + greatest + ": ");
+
+        for(let i = lowest; i <= greatest; i++) {
+            document.write(i + " ");
+
+            if(i % 2 == 0) {
+                even++;
+            }
+            else {
+                odd++;
+            }
+
+            sum += i;
+        }
+
+        document.write("</p><p>Número de pares: " + even + "</p>");
+        document.write("<p>Número de impares: " + odd + "</p>");
+        document.write("<p>Suma total: " + sum + "</p>");
+    </script>
+</body>
+</html>
