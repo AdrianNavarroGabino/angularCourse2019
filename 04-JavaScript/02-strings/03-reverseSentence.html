@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        let sentence = prompt("Introduce una frase:");
+        let reverseSentence = "";
+
+        for(let i = sentence.length - 1; i >= 0; i--)
+        {
+            reverseSentence += sentence.charAt(i);
+        }
+
+        document.write("<p>Frase normal: " + sentence + "</p>");
+        document.write("<p>Frase al revés: " + reverseSentence + "</p>");
+    </script>
+</body>
+</html>
