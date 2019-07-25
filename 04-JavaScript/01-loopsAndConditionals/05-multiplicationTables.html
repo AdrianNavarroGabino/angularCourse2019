@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Bucles</title>
+    <style>
+        table, td, tr {
+            border: 1px solid black;
+            border-spacing: 0px;
+            text-align: center;
+        }
+
+        .cell1 {
+            width: 50px;
+        }
+
+        .cell2 {
+            width: 20px;
+        }
+
+        .cell3 {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bucles</h1>
+
+    <script>
+        function askNumber() {
+            let number = +prompt("Introduce un número:");
+            while(isNaN(number) || (number < 1 || number >10)) {
+                number = +prompt("Valor incorrecto. Introduce un número:");
+            }
+            return number;
+        }
+
+        function showMultiplicationTable(lowest, greatest) {
+            document.write("<table>");
+
+                for(let i = 1; i <= greatest; i++) {
+                    let result = lowest * i;
+
+                    document.write("<tr>");
+                    
+                    document.write("<td class='cell1'>" + lowest + " x " + i + "</td>");
+                    document.write("<td class='cell2'>=</td>");
+                    document.write("<td class='cell3'>" + result + "</td>");
+
+                    document.write("</tr>");
+                }
+
+            document.write("</table>");
+        }
+
+        let number1 = askNumber();
+        let number2 = askNumber();
+
+        let greatest = number1 > number2 ? number1 : number2;
+        let lowest = number1 < number2 ? number1 : number2;
+
+        showMultiplicationTable(lowest, greatest);
+    </script>
+</body>
+</html>
