@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        let sentence = prompt("Introduce una frase:");
+
+        sentence = sentence.trim();
+        document.write("<p>Frase sin espacios iniciales y finales: " + sentence + "</p>");
+        document.write("<p>Últimos 5 caracteres: " + sentence.substr(sentence.length - 5) + "</p>");
+    </script>
+</body>
+</html>
