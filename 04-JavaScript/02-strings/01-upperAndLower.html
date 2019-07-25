@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        let sentence1 = prompt("Introduce una frase:");
+        let sentence2 = prompt("Introduce otra frase:");
+
+        let longestSentence = sentence1.length > sentence2.length ? sentence1 : (sentence1.length == sentence2.length ? "Las dos son iguales" : sentence2);
+
+        document.write("<p>Mayúsculas: " + sentence1.toUpperCase() + "</p>");
+        document.write("<p>Minúsculas: " + sentence2.toLowerCase() + "</p>");
+        document.write("<p>Frase más larga: " + longestSentence + "</p>");
+    </script>
+</body>
+</html>
