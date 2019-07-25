@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        function letterIncluded(sentence, letter) {
+            if(sentence.toLowerCase().indexOf(letter.toLowerCase()) == -1) {
+                return false;
+            }
+            return true;
+        }
+
+        let sentence = prompt("Introduce una frase:");
+        let letter;
+
+        do {
+            letter = prompt("Introduce una letra:");
+        } while(letter.length != 1);
+
+        document.write("<p>");
+
+        if(letterIncluded(sentence, letter)) {
+            document.write("La letra " + letter + " está incluida en la frase '" + sentence + "'");
+        }
+        else {
+            document.write("La letra " + letter + " NO está incluida en la frase '" + sentence + "'");
+        }
+
+        document.write("</p>");
+    </script>
+</body>
+</html>
