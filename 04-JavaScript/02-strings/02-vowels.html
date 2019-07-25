@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strings</title>
+</head>
+<body>
+    <h1>Strings</h1>
+
+    <script>
+        let sentence = prompt("Introduce una frase:");
+        let vowels = 0;
+
+        for(let i = 0; i < sentence.length; i++)
+        {
+            switch(sentence.charAt(i).toLowerCase())
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    vowels++;
+                    break;
+            }
+        }
+
+        document.write("<p>Frase: " + sentence + "</p>");
+        document.write("<p>Número de vocales: " + vowels + "</p>");
+    </script>
+</body>
+</html>
