@@ -18,11 +18,7 @@
         document.write('<p>Número de palabras: ' + splitSentence.length + '</p>');
         document.write('<p>Primera palabra: ' + splitSentence[0] + '</p>');
         document.write('<p>Última palabra: ' + splitSentence[splitSentence.length - 1] + '</p>');
-        document.write('<p>Frase inversa: ');
-        for(let i = splitSentence.length - 1; i >= 0; i--) {
-            document.write(splitSentence[i] + ' ');
-        }
-        document.write('</p>');
+        document.write('<p>Frase inversa: ' + splitSentence.reverse().join(' ') + '</p>');
         document.write('<p>Frase ordenada de la A a la Z: ' + splitSentence.sort().join(' ') + '</p>');
         document.write('<p>Frase ordenada de la Z a la A: ' + splitSentence.reverse().join(' ') + '</p>');
     </script>
