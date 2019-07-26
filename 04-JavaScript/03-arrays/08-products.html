@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        function calculatePrice(productName = 'Producto genérico', price = 100, tax100 = 21) {
+            productName = productName.toString();
+            price = +price;
+            tax100 = +tax100;
+
+            if(isNaN(price) || isNaN(tax100) || price < 0 || tax100 < 0 || tax100 > 100){
+                console.log("Nombre: " + productName);
+                console.log("Parámetros incorrectos");
+            }
+            else{
+                console.log("Nombre: " + productName);
+                console.log("Precio final: " + (price + price * tax100 / 100) + "€");
+            }
+        }
+
+        calculatePrice();
+        calculatePrice("Producto 1");
+        calculatePrice("Producto 2", 235);
+        calculatePrice("Producto 3", 23, 10);
+        calculatePrice(2,3,4);
+        calculatePrice("Producto 4", "hola", 10);
+    </script>
+</body>
+</html>
