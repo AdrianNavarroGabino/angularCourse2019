@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<head>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="author" content="isabel" />
+    <title>Untitled 2</title>
+        <script>//aplicamos función cuando se carga la página en el navegador.
+            window.onload = function() {
+                //variable que toma el Id “información” esta función se encuentra más adelante.
+                let info=document.getElementById("informacion");
+                //número de títulos h1en todo el documento.
+                let mostrarh1=document.getElementsByTagName("h1");
+                //escribe dentro de info (innerHTML) en el id “información” y pone texto + cuántos elementos hay en mostrar h1.
+                info.innerHTML = "Número de h1: " + mostrarh1.length;
+
+                let info2 = document.getElementById("informacion2");
+                let numOfB = document.getElementsByTagName('b');
+                info2.innerHTML = "Número de negritas: " + numOfB.length;
+
+                let info3 = document.getElementById("informacion3");
+                let numOfSmall = document.getElementsByTagName('small');
+                info3.innerHTML = "Número de small: " + numOfSmall.length;
+
+                let info4 = document.getElementById("informacion4");
+                let numOfBInP2 = document.getElementsByTagName('p')[1].getElementsByTagName('b');
+                info4.innerHTML = "Número de negritas en el párrafo 2: " + numOfBInP2.length;
+
+            }
+        </script>
+</head>
+<body>
+    
+    <div  id="informacion" style= "border:thin solid silver; padding:.5em"></div>
+    <div  id="informacion2" style= "border:thin solid silver; padding:.5em"></div>
+    <div  id="informacion3" style= "border:thin solid silver; padding:.5em"></div>
+    <div  id="informacion4" style= "border:thin solid silver; padding:.5em"></div>
+    
+    <h1>Ejemplo1</h1>
+    
+    <p>Este es el primer párrafo del ejemplo, vamos a introducir <b>negrita</b> y <i>cursiva</i></p>
+    
+    <h2>ejemplo 2</h2>
+    
+    <p><small>Este <b>es</b> el segundo <b>párrafo</b> más pequeño</small> </p>
+    
+    <h1>ejemplo 3</h1>
+    
+    <p> Este es el tercer <b>párrafo</b> más grande</p>
+</body>
+</html>
