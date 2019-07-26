@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        function getPosition(arr, num, lastIndex = 0) {
+            return arr.indexOf(num, lastIndex);
+        }
+
+        a1 = [1, 2, 2, 3, 4, 5];
+        num = +prompt("Introduce un número");
+
+        let position = getPosition(a1, num);
+
+        if(position == -1) {
+            document.write('<p>El número ' + num + ' no está en el array</p>');
+        }
+        else {
+            document.write('<p>Posiciones en las que se encuentra el número ' + num + ': ' + position);
+
+            while(position != -1) {
+                position = getPosition(a1, num, position + 1);
+
+                if(position != -1) {
+                    document.write(', ' + position);
+                }
+            }
+
+            document.write('</p>');
+        }
+    </script>
+</body>
+</html>
