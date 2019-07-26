@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DOM</title>
+    <script type="text/javascript">
+    window.onload = function() {
+        // Numero de enlaces de la pagina
+
+        let info1 = document.getElementById("info1");
+        let links = document.getElementsByTagName("a");
+        info1.innerHTML = "<p>Número de enlaces de la página: " + links.length + "</p>";
+        
+        // Direccion del penultimo enlace
+
+        let info2 = document.getElementById("info2");
+        info2.innerHTML = "<p>Dirección del penultimo enlace: " + links[links.length - 2].href + "</p>";
+        
+        // Numero de enlaces que apuntan a http://prueba
+
+        let numOfLinks = 0;
+        let info3 = document.getElementById("info3");
+        for(let i of links)
+            if(i.href == 'http://prueba/')
+                numOfLinks++;
+        info3.innerHTML = "<p>Nímero de enlaces que apuntan a http://prueba: " + numOfLinks + "</p>"
+        
+        // Numero de enlaces del tercer párrafo
+
+        document.getElementById("info4").innerHTML = "<p>Número de enlaces del tercer párrafo: " +
+            document.getElementsByTagName('p')[2].getElementsByTagName('a').length + "</p>";
+        
+    }
+    </script>
+</head>
+<body>
+    <div id="info1" style="border: 1px solid black; padding:.5em"></div>
+    <div id="info2" style="border: 1px solid black; padding:.5em"></div>
+    <div id="info3" style="border: 1px solid black; padding:.5em"></div>
+    <div id="info4" style="border: 1px solid black; padding:.5em"></div>
+
+    <p>
+        Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscingelit</a>.
+        Sed mattis enim vitae orci. Phasellus libero. Maecenas nisl arcu, consequatcongue,
+        commodo nec, commodo ultricies, turpis. Quisque sapien nunc, posuere vitae,rutrum et,
+        luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultricesporttitor,
+        pede. Nullam sit amet nisl elementum elit convallis malesuada. Phasellusmagna sem, semper
+        quis, faucibus ut, rhoncus non, mi. <a href="http://prueba2">Fusceporta</a>. Duis pellentesque,
+        felis eu adipiscing ullamcorper, odio urna consequatarcu, at posuere ante quam non dolor.
+        Lorem ipsum dolor sit amet, consectetueradipiscing elit. Duis scelerisque. Donec lacus neque,
+        vehicula in, eleifend vitae,venenatis ac, felis. Donec arcu. Nam sed tortor nec ipsum aliquam
+        ullamcorper. Duisaccumsan metus eu urna. Aenean vitae enim. Integer lacus. Vestibulum venenatis
+        erat euodio. Praesent id metus.
+    </p>
+        
+    <p>
+        Aenean at nisl. Maecenas egestas dapibus odio. Vestibulum
+        ante ipsum primis infaucibus orci luctus et ultrices posuere cubilia Curae; Proin consequat
+        auctor diam. <a href="http://prueba">Ut bibendum blandit est</a>. Curabitur vestibulum. Nunc
+        malesuadaporttitor sapien. Aenean a lacus et metus venenatis porta. Suspendisse cursus, sem
+        nondapibus tincidunt, lorem magna porttitor felis, id sodales dolor dolor sed urna. Sedrutrum
+        nulla vitae tellus. Sed quis eros nec lectus tempor lacinia. Aliquam nec lectusnec neque aliquet
+        dictum. Etiam <a href="http://prueba3">consequat sem quis massa</a>. Donec aliquam euismod diam.
+        In magna massa, mattis id, pellentesque sit amet, porta sitamet, lectus. Curabitur posuere. Aliquam
+        in elit. Fusce condimentum, arcu inscelerisque lobortis, ante arcu scelerisque mi, at cursus mi
+        risus sed tellus.
+    </p>
+    
+    <p>
+        Donec sagittis, nibh nec ullamcorper tristique, pede velit feugiat massa, at
+        sollicitudin justo tellus vitae justo. Vestibulum aliquet, nulla sit amet imperdietsuscipit,
+        nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sedsem</a>. Quisque eget eros
+        vehicula diam euismod tristique. Ut dui. Donec in metus sedrisus laoreet sollicitudin. Proin et
+        nisi non arcu sodales hendrerit. In sem. Cras idaugue eu lorem dictum interdum. Donec pretium.
+        Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis.Mauris
+        mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique,ipsum odio euismod
+        tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sednon lectus non est pellentesque</a>
+        auctor.
+    </p>
+</body>
+</html>
