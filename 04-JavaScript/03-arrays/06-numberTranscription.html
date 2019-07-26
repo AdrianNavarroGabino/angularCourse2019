@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        let numberAux = prompt("Introduce un número del 0 al 99");
+        number = numberAux.split('');
+        let units;
+        console.log(number);
+
+        document.write('<p>');
+
+        if(number.length == 2)
+        {
+            switch(+number[0])
+            {
+                case 9: document.write('noventa'); break;
+                case 8: document.write('ochenta'); break;
+                case 7: document.write('setenta'); break;
+                case 6: document.write('sesenta'); break;
+                case 5: document.write('cincuenta'); break;
+                case 4: document.write('cuarenta'); break;
+                case 3: document.write('treinta'); break;
+                case 2:
+                    if(+number[1] == 0)
+                        document.write('veinte');
+                    else
+                        document.write('veinti');
+                    break;
+                case 1:
+                    switch(+number[1])
+                    {
+                        case 0: document.write('diez'); break;
+                        case 1: document.write('once'); break;
+                        case 2: document.write('doce'); break;
+                        case 3: document.write('trece'); break;
+                        case 4: document.write('catorce'); break;
+                        case 5: document.write('quince'); break;
+                        default: document.write('dieci'); break;
+                    }
+            }
+
+            if (+number[0] >= 3)
+                document.write(' y ');
+            
+            units = number[1];
+        }
+        else
+            units = number[0];
+        
+        if(+numberAux < 10 || +numberAux > 15)
+        {
+            switch(+units)
+            {
+                case 0:
+                    if(number.length == 1)
+                        document.write('cero');
+                    break;
+                case 1: document.write('uno'); break;
+                case 2: document.write('dos'); break;
+                case 3: document.write('tres'); break;
+                case 4: document.write('cuatro'); break;
+                case 5: document.write('quince'); break;
+                case 6: document.write('seis'); break;
+                case 7: document.write('siete'); break;
+                case 8: document.write('ocho'); break;
+                case 9: document.write('nueve'); break;
+            }
+        }
+
+        document.write('</p>');
+        
+    </script>
+</body>
+</html>
