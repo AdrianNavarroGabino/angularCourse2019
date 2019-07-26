@@ -9,12 +9,12 @@
 
         let info1 = document.getElementById("info1");
         let links = document.getElementsByTagName("a");
-        info1.innerHTML = "<p>Número de enlaces de la página: " + links.length + "</p>";
+        info1.innerHTML = "Número de enlaces de la página: " + links.length;
         
         // Direccion del penultimo enlace
 
         let info2 = document.getElementById("info2");
-        info2.innerHTML = "<p>Dirección del penultimo enlace: " + links[links.length - 2].href + "</p>";
+        info2.innerHTML = "Dirección del penultimo enlace: " + links[links.length - 2].href;
         
         // Numero de enlaces que apuntan a http://prueba
 
@@ -23,12 +23,11 @@
         for(let i of links)
             if(i.href == 'http://prueba/')
                 numOfLinks++;
-        info3.innerHTML = "<p>Nímero de enlaces que apuntan a http://prueba: " + numOfLinks + "</p>"
+        info3.innerHTML = "Número de enlaces que apuntan a http://prueba: " + numOfLinks;
         
         // Numero de enlaces del tercer párrafo
-
-        document.getElementById("info4").innerHTML = "<p>Número de enlaces del tercer párrafo: " +
-            document.getElementsByTagName('p')[2].getElementsByTagName('a').length + "</p>";
+        document.getElementById("info4").innerHTML = "Número de enlaces del tercer párrafo: " +
+            document.getElementsByTagName('p')[2].getElementsByTagName('a').length;
         
     }
     </script>
