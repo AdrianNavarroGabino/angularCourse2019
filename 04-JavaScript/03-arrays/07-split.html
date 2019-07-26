@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        let sentence = prompt("Introduce una frase:");
+        let splitSentence = sentence.split(' ');
+
+        document.write('<p>Frase: ' + sentence + '</p>');
+        document.write('<p>Número de palabras: ' + splitSentence.length + '</p>');
+        document.write('<p>Primera palabra: ' + splitSentence[0] + '</p>');
+        document.write('<p>Última palabra: ' + splitSentence[splitSentence.length - 1] + '</p>');
+        document.write('<p>Frase inversa: ');
+        for(let i = splitSentence.length - 1; i >= 0; i--) {
+            document.write(splitSentence[i] + ' ');
+        }
+        document.write('</p>');
+        document.write('<p>Frase ordenada de la A a la Z: ' + splitSentence.sort().join(' ') + '</p>');
+        document.write('<p>Frase ordenada de la Z a la A: ' + splitSentence.reverse().join(' ') + '</p>');
+    </script>
+</body>
+</html>
