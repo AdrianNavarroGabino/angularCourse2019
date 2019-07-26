@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Arrays</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+
+    <script>
+        let evenValues1 = elem => elem % 2 == 0;
+        let evenValues2 = function(elem) { return elem % 2 == 0; }
+        function evenValues3(elem) {
+            return elem %2 == 0;
+        }
+
+        let a1 = [1,2,3,4,5];
+        let a2 = [2,4,6,8,10];
+        let a3 = [1,3,5,7];
+
+        console.log(a1.some(evenValues1));
+        console.log(a1.some(evenValues2));
+        console.log(a1.some(evenValues3));
+        console.log(a2.some(evenValues1));
+        console.log(a2.some(evenValues2));
+        console.log(a2.some(evenValues3));
+        console.log(a3.some(evenValues1));
+        console.log(a3.some(evenValues2));
+        console.log(a3.some(evenValues3));
+    </script>
+</body>
+</html>
