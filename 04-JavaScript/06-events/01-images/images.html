@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Eventos</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+
+    <img src="img/r1.jpg" alt="Router">
+
+    <script>
+        let image = document.querySelector("img");
+        let image2 = document.createElement("img");
+        
+        image.addEventListener("mouseover", function() {
+            image.src = "img/r2.jpg";
+        })
+        image.addEventListener("click", function() {
+            image2.src = "img/r3.jpg";
+            document.body.appendChild(image2);
+        })
+        image.addEventListener("mouseout", function() {
+            image.src = "img/r1.jpg";
+            image2.src = "";
+        })
+    </script>
+</body>
+</html>
