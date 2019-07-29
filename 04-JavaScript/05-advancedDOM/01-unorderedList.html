@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM</h1>
+
+    <ul></ul>
+
+    <script>
+        let numberOfElements = +prompt("¿Cuántos elementos quieres añadir?");
+
+        if(isNaN(numberOfElements) || numberOfElements < 0)
+        {
+            let h2 = document.createElement("h2");
+            let t = document.createTextNode("Número incorrecto");
+            h2.appendChild(t);
+            document.body.appendChild(h2);
+        }
+        else
+        {
+            for(let i = 0; i < numberOfElements; i++)
+            {
+                let element = prompt("Introduce el elemento número " + (i + 1) + ":");
+                let ul = document.querySelector("ul");
+                let li = document.createElement("li");
+                let textElement = document.createTextNode(element);
+                li.appendChild(textElement);
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
