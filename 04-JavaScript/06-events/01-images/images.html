@@ -14,18 +14,20 @@
 
     <script>
         let image = document.querySelector("img");
-        let image2 = document.createElement("img");
         
         image.addEventListener("mouseover", function() {
             image.src = "img/r2.jpg";
         })
         image.addEventListener("click", function() {
+            let image2 = document.createElement("img");
             image2.src = "img/r3.jpg";
             document.body.appendChild(image2);
         })
         image.addEventListener("mouseout", function() {
             image.src = "img/r1.jpg";
-            image2.src = "";
+            let image2 = document.querySelectorAll("img")[1];
+            if(image2 != undefined)
+                document.body.removeChild(image2);
         })
     </script>
 </body>
