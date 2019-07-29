@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recordando</title>
+</head>
+<body>
+    <div id="parrafos">
+        <p>Párrafo 1</p>
+        <p>Párrafo 2</p>
+        <p>Párrafo 3</p>
+    </div>
+
+    <script>
+        let p3 = document.getElementsByTagName("p")[2];
+
+        let p4 = document.createElement("p");
+        let t = document.createTextNode("Párrafo 4");
+        p4.appendChild(t);
+        p4.style.color = "red";
+
+        document.getElementById("parrafos").insertBefore(p4,p3);
+    </script>
+</body>
+</html>
