@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 onclick="play()">Juego de Multiplicar</h1>
+
+    <script>
+        function play()
+        {
+            let right = 0;
+            let wrong = 0;
+
+            for(let i = 0; i < 10; i++)
+            {
+                let number1 = Math.floor((Math.random() * 10) + 1);
+                let number2 = Math.floor((Math.random() * 10) + 1);
+
+                let result = +prompt(number1 + " x " + number2);
+                
+                if(result == number1 * number2)
+                    right++;
+                else
+                    wrong++;
+            }
+
+            let h21 = document.createElement("h2");
+            let h22 = document.createElement("h2");
+            let text1 = document.createTextNode("Aciertos = " + right);
+            let text2 = document.createTextNode("Errores = " + wrong);
+            h21.appendChild(text1);
+            h22.appendChild(text2);
+            document.body.appendChild(h21);
+            document.body.appendChild(h22);
+        }
+    </script>
+</body>
+</html>
