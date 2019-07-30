@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Adrián Navarro Gabino">
+    <title>Formularios</title>
+</head>
+<body>
+    <form onSubmit="return validate(this);">
+        <label for="user">Usuario:</label><br><br>
+        <input type="text" name="user" id="user">
+        <div id="userDiv"></div>
+
+        <label for="pass">Contraseña:</label><br><br>
+        <input type="password" name="pass" id="pass">
+        <div id="passDiv"></div>
+
+        <label for="pass2">Vuelve a introducir la contraseña:</label><br><br>
+        <input type="password" name="pass2" id="pass2">
+        <div id="pass2Div"></div>
+
+        <label for="mail" id="mailLabel">Email:</label><br><br>
+        <input type="text" name="mail" id="mail">
+        <div id="mailDiv"></div>
+
+        <label for="sex">Sexo:</label><br><br>
+        <input type="radio" name="sex" id="man" value="hombre">Hombre
+        <input type="radio" name="sex" id="woman" value="mujer">Mujer
+        <div id="sexDiv"></div>
+
+        <label for="birth">Fecha de nacimiento:</label><br><br>
+        <input type="text" name="birth" id="birth">
+        <div id="birthDiv"></div>
+
+        <label for="plate">Matrícula de automóvil:</label><br><br>
+        <input type="text" name="plate" id="plate">
+        <div id="plateDiv"></div>
+
+        <label for="city">Ciudad:</label><br><br>
+        <input type="text" name="city" id="city"><br>
+
+        <label for="coutry">País:</label><br><br>
+        <select name="country" id="country">
+            <option value=""></option>
+            <option value="esp">España</option>
+            <option value="fr">Francia</option>
+            <option value="ale">Alemania</option>
+            <option value="por">Portugal</option>
+            <option value="sue">Suecia</option>
+        </select><br>
+
+        <label for="photo">Foto:</label><br><br>
+        <input type="file" name="photo" id="photo"><br><br><br><br>
+
+        <input type="submit" value="Registrar">
+    </form>
+
+    <script>
+        function validate() {
+            let correctForm = true;
+            console.log(document.getElementById("userDiv").childNodes.length);
+
+            if(!correctUser()){
+                correctForm = false;
+                let div1 = document.getElementById('userDiv');
+                if(document.getElementById("userDiv").childNodes.length == 0)
+                    showErrorMessage(div1, 'Usuario incorrecto');
+            }
+            else {
+                if(document.getElementById("userDiv").childNodes.length != 0)
+                    document.getElementById("userDiv").removeChild(document.getElementById("userDiv").childNodes[0]);
+            }
+
+            console.log(document.getElementById("userDiv").childNodes.length);
+
+            if(!correctPass()) {
+                correctForm = false;
+                let div2 = document.getElementById('passDiv');
+                if(document.getElementById("passDiv").childNodes.length == 0)
+                    showErrorMessage(div2, 'Contraseña incorrecta');
+            }
+            else {
+                if(document.getElementById("passDiv").childNodes.length != 0)
+                    document.getElementById("passDiv").removeChild(document.getElementById("passDiv").childNodes[0]);
+            }
+
+            if(!correctPass2()) {
+                correctForm = false;
+                let div3 = document.getElementById('pass2Div');
+                if(document.getElementById("pass2Div").childNodes.length == 0)
+                    showErrorMessage(div3, 'Las contraseñas no coinciden');
+            }
+            else {
+                if(document.getElementById("pass2Div").childNodes.length != 0)
+                    document.getElementById("pass2Div").removeChild(document.getElementById("pass2Div").childNodes[0]);
+            }
+
+            if(!correctMail()) {
+                correctForm = false;
+                let div4 = document.getElementById('mailDiv');
+                if(document.getElementById("mailDiv").childNodes.length == 0)
+                    showErrorMessage(div4, 'Correo incorrecto');
+            }
+            else {
+                if(document.getElementById("mailDiv").childNodes.length != 0)
+                    document.getElementById("mailDiv").removeChild(document.getElementById("mailDiv").childNodes[0]);
+            }
+
+            if(!correctSex()) {
+                correctForm = false;
+                let div5 = document.getElementById('sexDiv');
+                if(document.getElementById("sexDiv").childNodes.length == 0)
+                    showErrorMessage(div5, 'Debes marcar una opción');
+            }
+            else {
+                if(document.getElementById("sexDiv").childNodes.length != 0)
+                    document.getElementById("sexDiv").removeChild(document.getElementById("sexDiv").childNodes[0]);
+            }
+
+            if(!correctBirth()) {
+                correctForm = false;
+                let div6 = document.getElementById('birthDiv');
+                if(document.getElementById("birthDiv").childNodes.length == 0)
+                    showErrorMessage(div6, 'Fecha incorrecta');
+            }
+            else {
+                if(document.getElementById("birthDiv").childNodes.length != 0)
+                    document.getElementById("birthDiv").removeChild(document.getElementById("birthDiv").childNodes[0]);
+            }
+
+            if(!correctPlate()) {
+                correctForm = false;
+                let div7 = document.getElementById('plateDiv');
+                if(document.getElementById("plateDiv").childNodes.length == 0)
+                    showErrorMessage(div7, 'Matrícula incorrecta');
+            }
+            else {
+                if(document.getElementById("plateDiv").childNodes.length != 0)
+                    document.getElementById("plateDiv").removeChild(document.getElementById("plateDiv").childNodes[0]);
+            }
+
+            return correctForm;
+        }
+
+        function showErrorMessage(div, message) {
+            let p = document.createElement('p');
+            let t = document.createTextNode(message);
+            p.appendChild(t);
+            p.style.color = 'red';
+            div.appendChild(p);
+        }
+
+        function correctUser() {
+            let reg = /^[a-z0-9]{3,15}$/gi;
+            let user = document.getElementById("user").value;
+            return reg.test(user);
+        }
+
+        function correctPass() {
+            let reg = /^[a-zA-Z0-9_]{6,15}$/g;
+            let reg2 = /[a-z]/g;
+            let reg3 = /[A-Z]/g;
+            let reg4 = /[0-9]/g;
+            let pass = document.getElementById("pass").value;
+            return reg.test(pass) && reg2.test(pass) && reg3.test(pass) && reg4.test(pass);
+        }
+
+        function correctPass2() {
+            let pass = document.getElementById("pass").value;
+            let pass2 = document.getElementById("pass2").value;
+            return pass == pass2;
+        }
+
+        function correctMail() {
+            let reg = /[a-z0-9_.-]+@[a-z0-9]+\.[a-z]{2,4}/gi;
+            let mail = document.getElementById("mail").value;
+            return reg.test(mail);
+        }
+
+        function correctSex() {
+            return document.getElementById("man").checked || document.getElementById("woman").checked;
+        }
+
+        function correctBirth() {
+            let reg = /([0]?[1-9])|([1-2][0-9])|(3[0-1])[/-]([0]?[1-9])|(1[0-2])[/-]([1-2][0-9])?[0-9]{2}/g;
+            let birth = document.getElementById("birth").value;
+            return reg.test(birth);
+        }
+
+        function correctPlate() {
+            let reg = /[0-9]{4}[b-df-hj-np-tv-z]{3}/gi;
+            let plate = document.getElementById("plate").value;
+            return reg.test(plate);
+        }
+    </script>
+</body>
+</html>
