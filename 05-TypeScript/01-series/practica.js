@@ -1,3 +1,4 @@
+// Adrián Navarro Gabino
 var Series = /** @class */ (function () {
     function Series(nombre, capitulos) {
         this.serie = nombre;

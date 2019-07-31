@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 class Series
 {
 // Crear variables serie y capitulos privadas
