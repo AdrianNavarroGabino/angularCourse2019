@@ -9,7 +9,7 @@ const archivo = 'libros.json';
 let cargarLibros = () => {
     return new Promise((resolve, reject) => {
         try {
-             resolve(JSON.parse(fs.readFileSync(archivo, 'utf8')));
+            resolve(JSON.parse(fs.readFileSync(archivo, 'utf8')));
         } catch (e) {
             //console.log(e);
             reject([]);
@@ -17,7 +17,7 @@ let cargarLibros = () => {
     });
 }
 
-let guardarLibros = () => {
+let guardarLibros = (libros) => {
     return new Promise((resolve, reject) => {
         try {
              resolve(fs.writeFileSync(archivo, JSON.stringify(libros)));
@@ -30,7 +30,7 @@ let guardarLibros = () => {
 
 let buscarLibroPorId = (id) => {
     return new Promise((resolve, reject) => {
-        cargarLibros.then(libros => {
+        cargarLibros().then(libros => {
             let resultado = libros.filter((libro) => libro.id == id);
             if(resultado.length > 0)
                 resolve(resultado[0])
@@ -42,23 +42,22 @@ let buscarLibroPorId = (id) => {
 
 let nuevoLibro = (id, titulo, autor, precio) => {
     return new Promise((resolve, reject) => {
-        if (!buscarLibroPorId(id))
-        {
-            let libros = cargarLibros();
-            let nuevo = {
-                id: id,
-                titulo: titulo,
-                autor: autor,
-                precio: precio
-            };
-            libros.push(nuevo);
-            guardarLibros(libros);
-            resolve(nuevo);
-        }
-        else
-        {
+        buscarLibroPorId(id).then(libros => {
             reject("El libro ya existe");
-        }
+        }).catch(error => {
+            cargarLibros().then(libros => {
+                let nuevo = {
+                    id: id,
+                    titulo: titulo,
+                    autor: autor,
+                    precio: precio
+                };
+                
+                libros.push(nuevo);
+                guardarLibros(libros);
+                resolve(nuevo);
+            });
+        });   
     });
 };
 

@@ -15,9 +15,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     res.send({error: "Web cerrada por mantenimiento"});
-});
+});*/
 
 app.use(bodyParser.json());
 app.use('/book', libros);
