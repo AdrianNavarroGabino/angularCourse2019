@@ -94,15 +94,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req,res) => {
-    nuevoLibro(id, titulo, autor, precio).then(resultado => {
-        res.send(resultado);
-    }).catch(error => {res.send(error); });
+    nuevoLibro(req.body.id, req.body.titulo, req.body.autor, req.body.precio).then(resultado => {
+        res.send({error: false, resultado: resultado});
+    }).catch(error => {
+        res.send({error: true, mensajeError: "Error añadiendo libro: " + error}); });
 })
 
-router.delete('/', (req, res) => {
-    borrarLibro(id).then(resultado => {
+router.delete('/:id', (req, res) => {
+    borrarLibro(req.params.id).then(resultado => {
         res.send(resultado);
-    }).catch(error => {res.send(resultado); });
+    }).catch(error => {res.send(error); });
 })
 
 module.exports = router;
