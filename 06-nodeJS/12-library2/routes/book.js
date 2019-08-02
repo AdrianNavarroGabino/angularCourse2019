@@ -63,15 +63,16 @@ let nuevoLibro = (id, titulo, autor, precio) => {
 
 let borrarLibro = (id) => {
     return new Promise((resolve, reject) => {
-        let libros = cargarLibros();
-        let librosFiltrados = libros.filter((libro) => libro.id != id);
-        if (librosFiltrados.length !== libros.length) {
-            guardarLibros(librosFiltrados);
-            resolve(true);
-        }
-        else {
-            reject(false);
-        }
+        cargarLibros().then(libros => {
+            let librosFiltrados = libros.filter((libro) => libro.id != id);
+            if (librosFiltrados.length !== libros.length) {
+                guardarLibros(librosFiltrados);
+                resolve(true);
+            }
+            else {
+                reject(false);
+            }
+        });
     });
 };
 
@@ -101,6 +102,8 @@ router.get('/:id', (req, res) => {
         else {
             res.send({error: true, mensajeError: 'Libro no encontrado'});
         }
+    }).catch(error => {
+        res.send({error: true, mensajeError: "Error buscando libro " + error});
     });
 });
 
