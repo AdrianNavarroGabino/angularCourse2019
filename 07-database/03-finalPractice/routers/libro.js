@@ -12,6 +12,14 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    Libro.buscarLibroPorId(req.params.id).then(resultado => {
+        res.send(resultado);
+    }).catch(error => {
+        res.send(error);
+    });
+});
+
 router.post('/', (req, res) => {
     Libro.nuevoLibro(req.body.COD,
             req.body.ISBN, req.body.PRECIO,

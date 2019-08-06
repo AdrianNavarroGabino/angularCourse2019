@@ -78,4 +78,16 @@ module.exports = class Libro {
             });
         });
     }
+
+    static buscarLibroPorId(id) {
+        return new Promise( (resolve, reject) => {
+            conexion.query("SELECT * FROM libros WHERE COD = ?", id,
+                    (error, resultado, campos) => {
+                if (error)
+                    reject(error);
+                else
+                    resolve(resultado.map(lJSON => new Libro(lJSON)));
+                });
+        });
+    }
 }
