@@ -31,6 +31,8 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
+  filterSearch: string = '';
+
   constructor() { }
 
   ngOnInit() {

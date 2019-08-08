@@ -3,6 +3,18 @@
         {{ title }}
     </div>
     <div class="card-block">
+        <form class="form">
+            <div class="form-group row">
+                <label class="col-form-label col-sm-2 text-sm-right"
+                for="filterDesc">Filtro:</label>
+                <div class="col-sm-5">
+                    <input type="text" [(ngModel)]="filterSearch" class="form-control"
+                            name="filterDesc" id="filterDesc" placeHolder="Filter...">
+                </div>
+                <label class="col-form-label col-sm-5">Filtrado por: {{ filterSearch }}</label>
+            </div>
+        </form>
+
         <div class="table-responsive" *ngIf="products && products.length > 0">
             <table class="table table-striped">
                 <thead>
