@@ -25,6 +25,12 @@ export class ProductListComponent implements OnInit {
     rating: 4
   }];
 
+  showImage = true;
+
+  toogleImage() {
+    this.showImage = !this.showImage;
+  }
+
   constructor() { }
 
   ngOnInit() {
