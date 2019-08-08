@@ -7,6 +7,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th>{{ headers.image }}</th>
                         <th>{{ headers.desc }}</th>
                         <th>{{ headers.price }}</th>
                         <th>{{ headers.avail }}</th>
@@ -14,6 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let product of products">
+                        <td><img [src]="product.imageUrl" alt=""></td>
                         <td>{{ product.desc }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.avail }}</td>

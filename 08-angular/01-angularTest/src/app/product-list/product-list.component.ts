@@ -1,5 +1,3 @@
-// Adrián Navarro Gabino
-
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
 
@@ -10,7 +8,7 @@ import { IProduct } from 'interfaces/i-product';
 })
 export class ProductListComponent implements OnInit {
   title = "Mi lista de productos";
-  headers = {desc: 'Producto', price: 'Precio', avail: 'Disponible'};
+  headers = {image: 'Imagen', desc: 'Producto', price: 'Precio', avail: 'Disponible'};
   products: IProduct[] = [{
     id: 1,
     desc: 'SSD hard drive',
