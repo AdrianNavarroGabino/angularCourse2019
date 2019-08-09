@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
 
 @Component({
@@ -8,16 +8,9 @@ import { IProduct } from 'interfaces/i-product';
 })
 export class ProductItemComponent implements OnInit {
 
-  product: IProduct = {
-    id: 1,
-    desc: 'SSD hard drive',
-    avail: new Date('2016-10-03'),
-    price: 75,
-    imageUrl: 'assets/ssd.jpg',
-    rating: 5
-  };
-
-  showImage = true;
+  @Input() product: IProduct;
+  @Input() showImage: boolean;
+  @Input() rating: number;
 
   constructor() { }
 

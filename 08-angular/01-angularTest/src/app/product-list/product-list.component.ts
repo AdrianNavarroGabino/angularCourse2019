@@ -8,7 +8,7 @@ import { IProduct } from 'interfaces/i-product';
 })
 export class ProductListComponent implements OnInit {
   title = "Mi lista de productos";
-  headers = {image: 'Imagen', desc: 'Producto', price: 'Precio', avail: 'Disponible'};
+  headers = {image: 'Imagen', desc: 'Producto', price: 'Precio', avail: 'Disponible', rating: 'Puntuación'};
   products: IProduct[] = [{
     id: 1,
     desc: 'SSD hard drive',
