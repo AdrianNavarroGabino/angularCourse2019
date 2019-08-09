@@ -1,1 +1,4 @@
-<p>star-rating works!</p>
+<div class="star-container">
+    <span *ngFor="let star of [1,2,3,4,5]" class="fa"
+        [ngClass]="{'fa-star': star <= rating, 'fa-star-o': star > rating}"></span>
+</div>
