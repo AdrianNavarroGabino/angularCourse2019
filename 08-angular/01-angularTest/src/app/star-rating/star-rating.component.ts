@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./star-rating.component.scss']
 })
 export class StarRatingComponent implements OnInit {
-
+  rating: number = 4;
+  
   constructor() { }
 
   ngOnInit() {
