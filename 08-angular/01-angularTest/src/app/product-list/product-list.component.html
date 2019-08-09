@@ -27,8 +27,9 @@
                 <div class="col-4">{{ headers.desc }}</div>
                 <div class="col">{{ headers.price }}</div>
                 <div class="col">{{ headers.avail }}</div>
+                <div class="col">{{ headers.rating }}</div>
             </div>
-            <ulab-product-item class="row no-gutters" *ngFor="let product of products | productFilter:filterSearch | productOrder">
+            <ulab-product-item class="row no-gutters" *ngFor="let product of products | productFilter:filterSearch | productOrder" [product]="product" [showImage]="showImage" [rating]="product.rating">
             </ulab-product-item>
         </div>
     </div>

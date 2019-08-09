@@ -5,4 +5,4 @@
 <div class="col-4">{{ product.desc }}</div>
 <div class="col">{{ product.price | currency: 'EUR':'symbol' }}</div>
 <div class="col">{{ product.avail | date:'dd/MM/y' }}</div>
-<div class="col"><ulab-star-rating></ulab-star-rating></div>
+<div class="col"><ulab-star-rating [rating]="rating"></ulab-star-rating></div>
