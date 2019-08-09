@@ -23,6 +23,13 @@ export class ProductListComponent implements OnInit {
     price: 96.95,
     imageUrl: 'assets/motherboard.jpg',
     rating: 4
+  },{
+    id: 3,
+    desc: 'GRAPHIC card',
+    avail: new Date('2015-09-01'),
+    price: 40,
+    imageUrl: 'assets/graphiccard.jpg',
+    rating: 3
   }];
 
   showImage = true;

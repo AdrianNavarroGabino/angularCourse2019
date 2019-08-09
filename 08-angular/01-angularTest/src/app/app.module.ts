@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './pipes/product-filter.pipe';
+import { ProductOrderPipe } from './pipes/product-order.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    ProductOrderPipe
   ],
   imports: [
     BrowserModule,
