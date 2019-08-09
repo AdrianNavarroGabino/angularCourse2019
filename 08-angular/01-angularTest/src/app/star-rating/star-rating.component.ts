@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { IProduct } from 'interfaces/i-product';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'ulab-star-rating',
@@ -7,12 +6,22 @@ import { IProduct } from 'interfaces/i-product';
   styleUrls: ['./star-rating.component.scss']
 })
 export class StarRatingComponent implements OnInit {
+  private auxRating: number;
   @Input() rating: number;
-  @Input() product: IProduct;
+  @Output() ratingChanged = new EventEmitter<number>();
 
   constructor() { }
 
+  restoreRating() {
+    this.auxRating = this.rating;
+  }
+
+  setRating() {
+    this.ratingChanged.emit(this.auxRating);
+  }
+
   ngOnInit() {
+    this.auxRating = this.rating;
   }
 
 }
