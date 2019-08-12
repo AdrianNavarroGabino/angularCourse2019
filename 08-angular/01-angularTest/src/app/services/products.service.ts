@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ResponseProducts } from 'interfaces/response-products';
+import { OkResponse } from 'interfaces/ok-response';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,17 @@ export class ProductsService {
       catchError((resp: HttpErrorResponse) =>
         throwError(`Error obteniendo productos. Codigo de servidor: ${resp.status}. Mensaje: ${resp.message}`))
     );
+  }
+
+  changeRating(idProduct: number, rating: number) : Observable<boolean> {
+    return this.http.put<OkResponse>(this.productURL + '/rating/' + idProduct,
+                                    {rating: rating}).pipe(
+      catchError((resp: HttpErrorResponse) => throwError(`Error cambiando
+      puntuación! Código de servidor: ${resp.error}. Mensaje: ${resp.message}`)),
+      map(resp => {
+        if(!resp.ok) { throw resp.error; }
+        return true;
+      })
+    )
   }
 }

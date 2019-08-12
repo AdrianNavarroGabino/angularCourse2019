@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'ulab-product-item',
@@ -12,11 +13,14 @@ export class ProductItemComponent implements OnInit {
   @Input() showImage: boolean;
   @Input() rating: number;
 
-  changeRating(rating: number) {
-    this.product.rating = rating;
-  }
+  constructor(private productsService: ProductsService) { }
 
-  constructor() { }
+  changeRating(rating: number) {
+    this.productsService.changeRating(this.product.id, rating).subscribe(
+      ok => this.product.rating = rating,
+      error => console.error(error)
+    );
+  }
 
   ngOnInit() {
   }
