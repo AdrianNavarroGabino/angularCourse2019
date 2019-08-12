@@ -9,6 +9,7 @@ import { ProductOrderPipe } from './pipes/product-order.pipe';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ProductsService } from './services/products.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductsService } from './services/products.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     ProductsService

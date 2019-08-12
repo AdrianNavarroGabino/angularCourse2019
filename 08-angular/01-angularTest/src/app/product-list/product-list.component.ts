@@ -23,7 +23,12 @@ export class ProductListComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
-    this.products = this.productsService.getProducts();
+    this.productsService.getProducts()
+      .subscribe(
+        prods => this.products = prods,
+        error => console.error(error),
+        () => console.log('Products loaded')
+      );
   }
 
 }
