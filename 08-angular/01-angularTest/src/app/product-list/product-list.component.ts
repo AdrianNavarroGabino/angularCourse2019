@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'ulab-product-list',
@@ -9,28 +10,7 @@ import { IProduct } from 'interfaces/i-product';
 export class ProductListComponent implements OnInit {
   title = "Mi lista de productos";
   headers = {image: 'Imagen', desc: 'Producto', price: 'Precio', avail: 'Disponible', rating: 'Puntuación'};
-  products: IProduct[] = [{
-    id: 1,
-    desc: 'SSD hard drive',
-    avail: new Date('2016-10-03'),
-    price: 75,
-    imageUrl: 'assets/ssd.jpg',
-    rating: 5
-  },{
-    id: 2,
-    desc: 'LGA1151 Motherboard',
-    avail: new Date('2016-09-15'),
-    price: 96.95,
-    imageUrl: 'assets/motherboard.jpg',
-    rating: 4
-  },{
-    id: 3,
-    desc: 'GRAPHIC card',
-    avail: new Date('2015-09-01'),
-    price: 40,
-    imageUrl: 'assets/graphiccard.jpg',
-    rating: 3
-  }];
+  products: IProduct[] = [];
 
   showImage = true;
 
@@ -40,9 +20,10 @@ export class ProductListComponent implements OnInit {
 
   filterSearch: string = '';
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit() {
+    this.products = this.productsService.getProducts();
   }
 
 }
