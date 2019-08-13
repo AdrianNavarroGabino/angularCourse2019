@@ -1,0 +1,26 @@
+<app-event-add (event1)="addEvent($event)"></app-event-add>
+
+<form class="form">
+    <div class="form-group row">
+        <label class="col-form-label col-sm-2 text-sm-right"
+        for="filterDesc">Filtro:</label>
+        <div class="col-sm-5">
+            <input type="text" [(ngModel)]="filterSearch" class="form-control"
+                    name="filterDesc" id="filterDesc" placeHolder="Filter...">
+        </div>
+        <label class="col-form-label col-sm-5">Filtrado por: {{ filterSearch }}</label>
+    </div>
+</form>
+<p>
+    <a href="#" (click)="orderByDate()">Ordenar por fecha</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" (click)="orderByPrice()">Ordenar por precio</a>
+</p>
+<div class="row" *ngIf="events && events.length > 0; else elseBlock">
+        <app-event-item class="col-6 mt-4" *ngFor="let event of events | eventFilter:filterSearch | eventOrder:'price'"
+            [event]="event" (delete)="deleteEvent($event)"></app-event-item>
+</div>
+
+<ng-template #elseBlock>
+    <h3>No available events</h3>
+</ng-template>
