@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class ProductDetailComponent implements OnInit {
   product: IProduct;
 
   constructor(private route: ActivatedRoute,
-              private productsService: ProductsService) { }
+              private productsService: ProductsService,
+              private router: Router) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
@@ -30,4 +31,7 @@ export class ProductDetailComponent implements OnInit {
     );
   }
 
+  goBack() {
+    this.router.navigate(['/products']);
+  }
 }
