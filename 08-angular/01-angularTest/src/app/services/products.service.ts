@@ -5,6 +5,7 @@ import { map, catchError } from 'rxjs/operators'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { ResponseProducts } from 'interfaces/response-products';
 import { OkResponse } from 'interfaces/ok-response';
+import { ProductResponse } from 'interfaces/product-response';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,16 @@ export class ProductsService {
         return true;
       })
     )
+  }
+
+  addProduct(product: IProduct) : Observable<IProduct> {
+    return this.http.post<ProductResponse>(this.productURL, product).pipe(
+      catchError((resp: HttpErrorResponse) => throwError(`Error insertando
+       producto! Código de servidor: ${resp.status}. Mensaje: ${resp.message}`)),
+        map(resp => {
+          if(!resp.ok) { throw resp.error; }
+          return resp.product;
+        })
+    );
   }
 }

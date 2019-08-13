@@ -18,9 +18,25 @@ export class ProductListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
+  myProduct2: IProduct = {
+    id: 5006,
+    description: "Adrián's product",
+    price: 0,
+    available: new Date('2018-01-01'),
+    imageUrl: null,
+    rating: 1
+  };
+
   filterSearch: string = '';
 
   constructor(private productsService: ProductsService) { }
+
+  addProduct() {
+    this.productsService.addProduct(this.myProduct2).subscribe(
+      ok => console.log(ok),
+      error => console.error(error)
+    );
+  }
 
   ngOnInit() {
     this.productsService.getProducts()
