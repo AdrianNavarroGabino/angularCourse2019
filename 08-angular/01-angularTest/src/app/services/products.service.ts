@@ -23,6 +23,17 @@ export class ProductsService {
     );
   }
 
+  getProduct(id: number): Observable<IProduct> {
+    return this.http.get<{ product: IProduct }>(`${this.productURL}/${id}`).pipe(
+      map(resp => {
+        const p = resp.product;
+        return p;
+      }),
+      catchError((resp: HttpErrorResponse) =>
+        throwError(`Error obteniendo producto. Codigo de servidor: ${resp.status}. Mensaje: ${resp.message}`))
+    );
+  }
+
   changeRating(idProduct: number, rating: number) : Observable<boolean> {
     return this.http.put<OkResponse>(this.productURL + '/rating/' + idProduct,
                                     {rating: rating}).pipe(

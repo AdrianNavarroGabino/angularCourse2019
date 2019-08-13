@@ -10,6 +10,10 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ProductsService } from './services/products.service';
 import { HttpClientModule } from '@angular/common/http';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -18,12 +22,16 @@ import { HttpClientModule } from '@angular/common/http';
     ProductFilterPipe,
     ProductOrderPipe,
     ProductItemComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    WelcomeComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
     ProductsService

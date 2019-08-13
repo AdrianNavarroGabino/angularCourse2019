@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        {{ product?.description }}
+    </div>
+    <div class="card-block p-3 text-center">
+        <img [src]="product?.imageUrl" alt="">
+        <div>Price: {{ product?.price | currency:'EUR': 'symbol' }}</div>
+        <div>Available since: {{ product?.available | date:'dd/MM/y' }}</div>
+        <div>
+            <ulab-star-rating *ngIf="product" [rating]="product.rating"
+                            (ratingChanged)="changeRating($event)"></ulab-star-rating>
+        </div>
+        <div>
+            <button type="button" class="btn btn-default">Volver</button>
+        </div>
+    </div>
+</div>
