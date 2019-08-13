@@ -34,4 +34,8 @@ export class ProductDetailComponent implements OnInit {
   goBack() {
     this.router.navigate(['/products']);
   }
+
+  edit() {
+    this.router.navigate(['/products/edit', this.product.id]);
+  }
 }

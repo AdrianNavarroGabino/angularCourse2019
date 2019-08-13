@@ -14,6 +14,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { LeavePageGuard } from './guards/leave-page.guard';
+import { ProductDetailGuard } from './guards/product-detail.guard';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { APP_ROUTES } from './app.routes';
     ProductItemComponent,
     StarRatingComponent,
     WelcomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { APP_ROUTES } from './app.routes';
     RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [
-    ProductsService
+    ProductsService,
+    ProductDetailGuard,
+    LeavePageGuard
   ],
   bootstrap: [AppComponent]
 })

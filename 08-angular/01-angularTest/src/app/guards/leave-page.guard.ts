@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanDeactivate } from '@angular/router';
+import { Observable } from 'rxjs';
+import { ProductEditComponent } from '../product-edit/product-edit.component';
+
+@Injectable()
+export class LeavePageGuard implements CanDeactivate<ProductEditComponent> {
+  canDeactivate(
+    component: ProductEditComponent,
+    currentRoute: ActivatedRouteSnapshot,
+    currentState: RouterStateSnapshot,
+    nextState?: RouterStateSnapshot
+  ): boolean | Observable<boolean> | Promise<boolean> {
+    return confirm('¿Quieres abandonar la página? Los cambios no se guardarán');
+  }
+}
