@@ -13,7 +13,6 @@ import { EventOrderPipe } from './pipes/event-order.pipe';
 import { EventItemComponent } from './event-item/event-item.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { HttpClientModule } from '@angular/common/http';
-import { WelcomeComponent } from './welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { EventDetailComponent } from './event-detail/event-detail.component';
@@ -31,7 +30,6 @@ import { EventDetailResolve } from './guards/event-detail-resolve.service';
     EventOrderPipe,
     EventItemComponent,
     EventAddComponent,
-    WelcomeComponent,
     EventDetailComponent
   ],
   imports: [

@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { IEvent } from 'interfaces/i-event';
 import { ActivatedRoute, Router } from '@angular/router';
