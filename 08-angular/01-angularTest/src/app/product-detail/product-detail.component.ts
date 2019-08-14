@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
 import { Router, ActivatedRoute } from '@angular/router';

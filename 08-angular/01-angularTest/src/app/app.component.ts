@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { Component } from '@angular/core';
 
 @Component({

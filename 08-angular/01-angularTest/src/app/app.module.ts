@@ -17,6 +17,7 @@ import { APP_ROUTES } from './app.routes';
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import { LeavePageGuard } from './guards/leave-page.guard';
 import { ProductDetailGuard } from './guards/product-detail.guard';
+import { ProductDetailResolve } from './guards/product-detail-resolve.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProductDetailGuard } from './guards/product-detail.guard';
   providers: [
     ProductsService,
     ProductDetailGuard,
-    LeavePageGuard
+    LeavePageGuard,
+    ProductDetailResolve
   ],
   bootstrap: [AppComponent]
 })

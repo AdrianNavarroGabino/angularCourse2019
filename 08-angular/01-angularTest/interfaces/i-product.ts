@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 export interface IProduct {
     id: number;
     description: string;

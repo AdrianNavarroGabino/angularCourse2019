@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { Injectable } from '@angular/core';
 import { IProduct } from 'interfaces/i-product';
 import { Observable, throwError } from 'rxjs';

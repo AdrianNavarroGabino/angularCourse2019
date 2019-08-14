@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { IProduct } from './i-product';
 
 export interface ProductResponse {
