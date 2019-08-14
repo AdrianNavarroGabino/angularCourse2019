@@ -7,7 +7,7 @@
         <div>Price: {{ product?.price | currency:'EUR': 'symbol' }}</div>
         <div>Available since: {{ product?.available | date:'dd/MM/y' }}</div>
         <div>
-            <ulab-star-rating *ngIf="product" [rating]="product.rating"
+            <ulab-star-rating [rating]="product.rating"
                             (ratingChanged)="changeRating($event)"></ulab-star-rating>
         </div>
         <div>
