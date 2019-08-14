@@ -24,6 +24,8 @@ export class ProductDetailComponent implements OnInit {
           p => this.product = p,
           error => console.error(error)
       );
+    
+    this.product = this.route.snapshot.data['product'];
   }
 
   changeRating(rating: number) {
