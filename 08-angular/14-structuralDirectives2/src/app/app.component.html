@@ -4,13 +4,13 @@
     {{ title }}!
   </h1>
 
-  <h2>Repeat Times</h2>
-
   <select [(ngModel)]="color">
     <option value="yellow">Yellow</option>
     <option value="red">Red</option>
     <option value="#06F">Blue</option>
   </select>
+
+  <h2>Repeat Times</h2>
 
   <p *repeatTimes="4; let n = current">
     {{n}} welcome works!
