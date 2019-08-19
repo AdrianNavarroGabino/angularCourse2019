@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 [setColor]="color">
+    {{ title }}!
+  </h1>
+  <select [(ngModel)]="color">
+    <option value="yellow">Yellow</option>
+    <option value="red">Red</option>
+    <option value="#06F">Blue</option>
+  </select>
+
+  <p *repeatTimes="10; let n = current">
+    {{n}} welcome works!
+  </p>
+</div>
+
+
