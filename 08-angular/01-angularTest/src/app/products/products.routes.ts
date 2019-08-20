@@ -22,6 +22,9 @@ export const PRODUCT_ROUTES: Route[] = [
         path: 'edit/:id',
         canActivate: [ProductDetailGuard],
         canDeactivate: [LeavePageGuard],
-        component: ProductEditComponent
+        component: ProductEditComponent,
+        resolve: {
+            product: ProductDetailResolve
+        }
     }
 ]
