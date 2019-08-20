@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { LeavePageGuard } from './guards/leave-page.guard';
 import { ProductsModule } from './products/products.module';
+import { MenuModule } from './menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProductsModule } from './products/products.module';
     WelcomeComponent
   ],
   imports: [
+    MenuModule,
     ProductsModule,
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES)
