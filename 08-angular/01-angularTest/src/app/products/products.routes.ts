@@ -9,9 +9,9 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductDetailResolve } from './guards/product-detail-resolve.service';
 
 export const PRODUCT_ROUTES: Route[] = [
-    { path: 'products', component: ProductListComponent },
+    { path: '', component: ProductListComponent },
     {
-        path: 'products/:id',
+        path: ':id',
         canActivate: [ProductDetailGuard],
         component: ProductDetailComponent,
         resolve: {
@@ -19,7 +19,7 @@ export const PRODUCT_ROUTES: Route[] = [
         }
     },
     {
-        path: 'products/edit/:id',
+        path: 'edit/:id',
         canActivate: [ProductDetailGuard],
         canDeactivate: [LeavePageGuard],
         component: ProductEditComponent
