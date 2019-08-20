@@ -1,7 +1,7 @@
 // Adrián Navarro Gabino
 
 import { Component, OnInit, Input } from '@angular/core';
-import { IProduct } from 'interfaces/i-product';
+import { IProduct } from '../interfaces/i-product';
 import { ProductsService } from '../services/products.service';
 
 @Component({
