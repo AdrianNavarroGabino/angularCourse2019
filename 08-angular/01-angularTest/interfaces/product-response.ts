@@ -1,6 +1,6 @@
 // Adrián Navarro Gabino
 
-import { IProduct } from './i-product';
+import { IProduct } from '../src/app/products/interfaces/i-product';
 
 export interface ProductResponse {
     ok: boolean;

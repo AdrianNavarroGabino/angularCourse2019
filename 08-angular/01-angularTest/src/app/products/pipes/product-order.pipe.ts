@@ -1,7 +1,7 @@
 // Adrián Navarro Gabino
 
 import { Pipe, PipeTransform } from '@angular/core';
-import { IProduct } from 'interfaces/i-product';
+import { IProduct } from '../interfaces/i-product';
 
 @Pipe({
   name: 'productOrder'

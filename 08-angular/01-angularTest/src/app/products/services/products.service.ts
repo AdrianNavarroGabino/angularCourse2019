@@ -1,7 +1,7 @@
 // Adrián Navarro Gabino
 
 import { Injectable } from '@angular/core';
-import { IProduct } from 'interfaces/i-product';
+import { IProduct } from 'src/app/products/interfaces/i-product';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';

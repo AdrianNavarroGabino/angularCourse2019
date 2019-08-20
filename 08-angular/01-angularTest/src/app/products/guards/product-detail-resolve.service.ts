@@ -5,7 +5,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, Resolve, Router } from '@a
 import { Observable } from 'rxjs';
 import { ProductsService } from '../services/products.service';
 import { catchError } from 'rxjs/operators';
-import { IProduct } from 'interfaces/i-product';
+import { IProduct } from '../interfaces/i-product';
 
 @Injectable()
 export class ProductDetailResolve implements Resolve<IProduct> {
