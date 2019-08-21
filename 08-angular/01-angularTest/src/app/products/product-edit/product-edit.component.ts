@@ -48,4 +48,15 @@ export class ProductEditComponent implements OnInit, ComponentDeactivate {
         error => console.error(error)
       )
   }
+
+  changeImage(fileInput: HTMLInputElement) {
+    if(!fileInput.files || fileInput.files.length === 0)
+      return;
+    
+      let reader: FileReader = new FileReader();
+      reader.readAsDataURL(fileInput.files[0]);
+      reader.addEventListener('loadend', e => {
+        this.product.imageUrl = reader.result.toString();
+      });
+  }
 }
