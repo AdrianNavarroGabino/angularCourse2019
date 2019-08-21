@@ -1,1 +1,15 @@
-<p>product-edit works!</p>
+<div class="card">
+    <div class="card-header bg-success text-white">
+        Editar producto
+    </div>
+    <div class="card-body">
+        <div>
+            <input type="text" class="form-control" [(ngModel)]="product.description" #descModel="ngModel">
+        </div>
+        <div>Dirty: {{ descModel.dirty }}</div>
+        <div>Valid: {{ descModel.valid }}</div>
+        <div>Value: {{ descModel.value }}</div>
+        <div>Errors: {{ descModel.errors | json }}</div>
+        <div>{{ product | json }}</div>
+    </div>
+</div>
