@@ -58,4 +58,16 @@ export class ProductsService {
         })
     );
   }
+
+  updateProduct(product: IProduct): Observable<boolean> {
+    return this.http.put<OkResponse>(this.productURL + '/' + product.id,
+      product).pipe(
+        catchError((resp: HttpErrorResponse) => throwError(`Error modificando 
+        producto!. Código de servidor: ${resp.status}. Mensaje: ${resp.message}`)),
+        map(resp => {
+          if(!resp.ok) { throw resp.error; }
+          return true;
+        })
+      );
+  }
 }
