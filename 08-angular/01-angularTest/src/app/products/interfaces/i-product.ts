@@ -4,7 +4,7 @@ export interface IProduct {
     id: number;
     description: string;
     price: number;
-    available: Date;
+    available: string;
     imageUrl: string;
     rating: number;
 }

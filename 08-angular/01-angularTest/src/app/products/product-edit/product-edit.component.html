@@ -3,12 +3,47 @@
         Editar producto
     </div>
     <div class="card-body">
-        <div>
-            <input type="text" class="form-control" [(ngModel)]="product.description" #descModel="ngModel">
-        </div>
+        <form #productForm="ngForm" novalidate>
+            <div class="form-group row">
+                <label for="description" class="col-sm-2 col-form-label text-sm-right">Descripción</label>
+                <div class="col-sm-10">
+                    <input type="text" name="description" class="form-control"
+                    [(ngModel)]="product.description" #descModel="ngModel"
+                    minlength="5" maxlength="60" required
+                    [ngClass]="{'is-valid': descModel.touched && descModel.valid,
+                    'is-invalid': descModel.touched && !descModel.valid}"
+                    (ngModelChange)="product.description = $event.toUpperCase()">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="price" class="col-sm-2 col-form-label text-sm-right">Precio</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" name="price"
+                    [(ngModel)]="product.price" min="0" step="0.01" required
+                    #priceModel="ngModel" [ngClass]="validClasses(priceModel,
+                    'is-valid', 'is-invalid')">
+                </div>
+            </div>
+            <div class="form-group row">
+                    <label for="available" class="col-sm-2 col-form-label text-sm-right">Disponible</label>
+                    <div class="col-sm-10">
+                        <input type="datetime-local" class="form-control" name="available"
+                        [(ngModel)]="product.available" #availModel="ngModel" required
+                        [ngClass]="validClasses(availModel,
+                        'is-valid', 'is-invalid')">
+                    </div>
+                </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
         <div>Dirty: {{ descModel.dirty }}</div>
         <div>Valid: {{ descModel.valid }}</div>
-        <div>Value: {{ descModel.value }}</div>
+        <div>Value: {{ productForm.control.get('description').value | json }}</div>
         <div>Errors: {{ descModel.errors | json }}</div>
         <div>{{ product | json }}</div>
     </div>
