@@ -15,6 +15,7 @@ import { ProductDetailResolve } from './guards/product-detail-resolve.service';
 import { PRODUCT_ROUTES } from './products.routes';
 import { ProductOrderPipe } from './pipes/product-order.pipe';
 import { RatingModule } from '../rating/rating.module';
+import { MinDateDirective } from './directives/min-date.directive';
 
 
 
@@ -25,7 +26,8 @@ import { RatingModule } from '../rating/rating.module';
     ProductFilterPipe,
     ProductOrderPipe,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    MinDateDirective
   ],
   imports: [
     RatingModule,

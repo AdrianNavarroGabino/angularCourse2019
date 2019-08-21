@@ -4,8 +4,8 @@
     </div>
     <div class="card-block p-3 text-center">
         <img [src]="product?.imageUrl" alt="">
-        <div>Price: {{ product?.price | currency:'EUR': 'symbol' }}</div>
-        <div>Available since: {{ product?.available | date:'dd/MM/y' }}</div>
+        <div>Price: {{ product.price | currency:'EUR': 'symbol' }}</div>
+        <div>Available since: {{ product.available | date:'dd/MM/y' }}</div>
         <div>
             <ulab-star-rating [rating]="product.rating"
                             (ratingChanged)="changeRating($event)"></ulab-star-rating>
