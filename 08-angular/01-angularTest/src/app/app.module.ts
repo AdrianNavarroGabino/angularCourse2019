@@ -7,6 +7,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { LeavePageGuard } from './guards/leave-page.guard';
 import { MenuModule } from './menu/menu.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuModule } from './menu/menu.module';
   imports: [
     MenuModule,
     BrowserModule,
-    RouterModule.forRoot(APP_ROUTES, {preloadingStrategy: PreloadAllModules})
+    RouterModule.forRoot(APP_ROUTES, {preloadingStrategy: PreloadAllModules}),
+    NgbModule
   ],
   providers: [
     Title,

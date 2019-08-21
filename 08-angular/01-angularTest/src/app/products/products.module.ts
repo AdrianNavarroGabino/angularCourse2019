@@ -16,6 +16,7 @@ import { PRODUCT_ROUTES } from './products.routes';
 import { ProductOrderPipe } from './pipes/product-order.pipe';
 import { RatingModule } from '../rating/rating.module';
 import { MinDateDirective } from './directives/min-date.directive';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -34,7 +35,8 @@ import { MinDateDirective } from './directives/min-date.directive';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forChild(PRODUCT_ROUTES)
+    RouterModule.forChild(PRODUCT_ROUTES),
+    SharedModule
   ],
   providers: [
     ProductsService,

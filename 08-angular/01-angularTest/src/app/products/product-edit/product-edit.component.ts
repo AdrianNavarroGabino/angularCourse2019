@@ -6,6 +6,8 @@ import { IProduct } from '../interfaces/i-product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
 import { ProductsService } from '../services/products.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ConfirmModalComponent } from 'src/app/shared/confirm-modal/confirm-modal.component';
 
 @Component({
   selector: 'ulab-product-edit',
@@ -19,7 +21,8 @@ export class ProductEditComponent implements OnInit, ComponentDeactivate {
   constructor(
     private route: ActivatedRoute,
     private productsService: ProductsService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit() {
@@ -27,10 +30,15 @@ export class ProductEditComponent implements OnInit, ComponentDeactivate {
     this.product.available = this.product.available.replace(' ', 'T');
   }
 
-  canDeactivate() {
-    if(!this.exit)
-      return confirm('¿Quieres abandonar la página? Los cambios no se guardarán');
-    return true;
+  canDeactivate(): Promise<boolean> {
+    if(this.exit)
+      return new Promise((resolve, reject) => resolve(true));
+    
+    const modalRef = this.modalService.open(ConfirmModalComponent);
+    modalRef.componentInstance.title = 'Añadir producto';
+    modalRef.componentInstance.body = 'Los cambios no se guardarán. ¿Desea salir?';
+    return modalRef.result
+                   .catch(() => false);
   }
 
   validClasses(ngModel: NgModel, validClass: string, errorClass: string) {

@@ -1,3 +1,5 @@
+// Adrián Navarro Gabino
+
 import { Directive, Input } from '@angular/core';
 import { Validator, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 
